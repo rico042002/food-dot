@@ -123,7 +123,6 @@ header.sticky .nav li a {
 }
 
 header.sticky .nav li a:hover {
-    font-size: 1em;
     color: var(--main);
     transition: 300ms ease-in-out;
 }
@@ -403,4 +402,128 @@ section {
     color: #333;
     transition: 0.5s ease-in-out;
     font-weight: 500;
+}
+
+/* Media Queries */
+
+@media (max-width: 991px) { /*tablet*/
+    header,
+    header.sticky {
+        padding: 10px 20px;
+    }
+
+    header .nav {
+        display: none;
+    }
+    /*Mobile Menu*/
+    header .nav.active { 
+        width: 100%;
+        height: calc(100% - 68px);
+        position: fixed;
+        top: 68px;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #fff;
+    }
+
+    header .nav li {
+        margin-left: 0;
+    }
+
+    header .nav li a {
+        text-decoration: none;
+        color: var(--black-txt);
+        font-size: 1.6rem;
+        font-weight: 300;
+    }
+
+    .menuToggle {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background: url(/images/menu.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+    }
+
+    .menuToggle.active {
+        background: url(/images/close.png);
+        background-size: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    header.sticky .menuToggle {
+        filter: invert(1);
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .banner .content h2 {
+        font-size: 3rem;
+        color: var(--white-txt);
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .row .col50 {
+        position: relative;
+        width: 100%;
+    }
+
+    .row .col50 .imgBx {
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    .menu .content {
+        margin-top: 1rem;
+    }
+
+    .menu .content .box {
+        margin: 10px;
+    }
+
+    .menu .content .box .imgBx {
+        height: 260px;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .title_text {
+        font-size: 1.8rem;
+        line-height: 1.5rem;
+        margin-bottom: 1rem;
+        font-weight: 300;
+    }
+
+    .testimonials .content .box {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .contactForm {
+        padding: 35px 40px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+}  
+
+@media (max-width: 480px) {
+    .banner .content h2 {
+        font-size: 2.2rem;
+        color: var(--white-txt);
+    }
 }
